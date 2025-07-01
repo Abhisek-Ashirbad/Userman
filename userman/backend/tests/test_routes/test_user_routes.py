@@ -1,13 +1,13 @@
 import unittest
 from fastapi.testclient import TestClient
-from app import app
+from userman.backend.app import main
 from app.database.db import Base, engine
 from datetime import date
 
 class TestUserRoutes(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.client = TestClient(app)
+        cls.client = TestClient(main)
         Base.metadata.create_all(bind=engine)
 
     def setUp(self):

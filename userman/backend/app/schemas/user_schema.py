@@ -5,8 +5,8 @@ from pydantic.types import StringConstraints
 
 # Define string constraints
 PhoneNumber = Annotated[
-    str, 
-    StringConstraints(pattern=r'^\+?1?\d{9,15}$')
+    str,
+    StringConstraints(pattern=r'^\+?\d{1,3}(?:-)\d{10}$')
 ]
 
 SecurePassword = Annotated[

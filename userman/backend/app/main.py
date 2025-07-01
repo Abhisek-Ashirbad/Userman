@@ -18,9 +18,9 @@ app_port=int(os.getenv("PORT"))
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to f`app_title`"}
+    return {"message": f"Welcome to {app_title}"}
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host=app_host, port=app_port, reload=False)
+    uvicorn.run("main:app", host=app_host, port=app_port, reload=True)
